@@ -1,6 +1,6 @@
 <%-- 
-    Document   : index
-    Created on : 18/04/2020, 13:57:11
+    Document   : acesso_negado
+    Created on : 18/04/2020, 19:36:30
     Author     : matheus.kiel
 --%>
 
@@ -12,10 +12,6 @@
         <title>PFC - Umc Insight</title>
     </head>
     <body>
-        <h1>Bem vindo ao Sistema</h1>
-        <hr>
-        <br>
-        <a href="sys_admin/ger_usuario.jsp">Gerenciamento de usuários</a><br>
-        <a href="ServletGestaoDeAcesso?acao=Sair">Sair</a>
+        <h1>Hello World!</h1>
     </body>
 </html>

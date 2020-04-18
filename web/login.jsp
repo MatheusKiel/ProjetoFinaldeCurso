@@ -17,7 +17,7 @@
             <div id="centro">
                 <div id="centro2">
                     
-                    <form action="ControleAcesso" method="POST">
+                    <form action="ServletGestaoDeAcesso" method="POST">
                         <img id="imguser" src="imagens/usuario_imagem.png" alt=""/>
                         <input style="margin-top: 180px;" class="font-placeholder-login txtBoxPos txtBoxPos1"
                                placeholder="Login" autocomplete="off" type="text" name="txtLogin">

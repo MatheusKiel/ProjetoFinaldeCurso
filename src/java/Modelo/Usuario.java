@@ -13,18 +13,8 @@ public class Usuario {
     
     private String login;
     private String senha;
-    private int nivel;
+    private PerfilAcesso perfil;
     private String nome;
-    
-    // metodo para teste do login
-    public boolean verificarUsuario(){
-        if (this.login != null && this.senha != null){
-            if (this.login.equals("kiel") && this.senha.equals("123")){
-                return true;
-            }        
-        }
-        return false;
-    }
 
     public String getLogin() {
         return login;
@@ -42,14 +32,6 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public int getNivel() {
-        return nivel;
-    }
-
-    public void setNivel(int nivel) {
-        this.nivel = nivel;
-    }
-
     public String getNome() {
         return nome;
     }
@@ -57,6 +39,12 @@ public class Usuario {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    
-        
+
+    public PerfilAcesso getPerfil() {
+        return perfil;
+    }
+
+    public void setPerfil(PerfilAcesso perfil) {
+        this.perfil = perfil;
+    }
 }

@@ -5,8 +5,11 @@
  */
 package Controle;
 
+import Dao.UsuarioDAO;
+import Modelo.PerfilAcesso;
+import Modelo.Usuario;
 import java.io.IOException;
-import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,71 +19,47 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author matheus.kiel
  */
+
 public class ServletUsuario extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ServletUsuario</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ServletUsuario at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        try {
+            String acao = request.getParameter("acao");
+            if (acao.equals("Cadastrar")) {
+                Usuario usuario = new Usuario();
+                usuario.setLogin(request.getParameter("txtLogin"));
+                usuario.setSenha(request.getParameter("txtSenha"));
+                String perfil = request.getParameter("opPerfil");
+                if (perfil.equalsIgnoreCase("administrador")) {                    
+                    usuario.setPerfil(PerfilAcesso.ADMINISTRADOR);
+                }
+                else if(perfil.equalsIgnoreCase("servicedesk")) {
+                    usuario.setPerfil(PerfilAcesso.SERVICEDESK);
+                }
+                else{
+                    usuario.setPerfil(PerfilAcesso.PADRAO);
+                }
+                UsuarioDAO usuarioDAO = new UsuarioDAO();
+                usuarioDAO.cadastraNovoUsuario(usuario);
+                request.setAttribute("msg", "cadastrado com sucesso");
+                RequestDispatcher rd = request.getRequestDispatcher("/sys_admin/ger_usuario.jsp");
+                rd.forward(request, response);
+            }
+        } 
+        catch (Exception erro) {
+            RequestDispatcher rd = request.getRequestDispatcher("/erro.jsp");
+            request.setAttribute("erro", erro);
+            rd.forward(request, response);
         }
     }
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+    
+@Override
+protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+    processRequest(request, response);
+}
+@Override
+protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+    processRequest(request, response);
     }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-
 }

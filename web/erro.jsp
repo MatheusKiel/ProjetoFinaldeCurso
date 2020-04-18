@@ -1,6 +1,6 @@
 <%-- 
-    Document   : index
-    Created on : 18/04/2020, 13:57:11
+    Document   : erro
+    Created on : 18/04/2020, 17:14:01
     Author     : matheus.kiel
 --%>
 
@@ -12,10 +12,9 @@
         <title>PFC - Umc Insight</title>
     </head>
     <body>
-        <h1>Bem vindo ao Sistema</h1>
+        <h1>ERRO</h1>
         <hr>
         <br>
-        <a href="sys_admin/ger_usuario.jsp">Gerenciamento de usuários</a><br>
-        <a href="ServletGestaoDeAcesso?acao=Sair">Sair</a>
+        <%= ((Exception)request.getAttribute("erro")).getMessage() %>
     </body>
 </html>
