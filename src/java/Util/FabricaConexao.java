@@ -16,9 +16,22 @@ import java.sql.SQLException;
 
 public class FabricaConexao {
 
-    public static Connection getConexao() throws ClassNotFoundException, SQLException {
-        Class.forName("org.postgresql.Driver");
-        Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/VD_UmcInsight", "postgres", "Connection");
+    public static Connection getConexao(){
+        Connection con = null;
+        
+        try{
+            //driver de conexão
+            Class.forName("org.postgresql.Driver");
+            
+            //cria um objeto de conexao com um banco especificado no caminho...
+            con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/BD_UmcInsight", "postgres", "Connection");
+        }
+        catch (ClassNotFoundException erro1) {
+            throw new RuntimeException(erro1);
+        } 
+        catch (SQLException erro2) {
+            throw new RuntimeException(erro2);
+        }
         return con;
     }
 }

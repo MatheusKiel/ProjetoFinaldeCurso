@@ -1,0 +1,128 @@
+/* 
+    Created on : 12/03/2020, 17:43:03
+    Author     : matheus.kiel
+*/
+body{
+    background-color: blueviolet; /* Para navegadores que não tem suporte para Gradientes */
+    background-image: linear-gradient(to top right, purple, darkviolet, blueviolet,royalblue, dodgerblue, deepskyblue);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Id's */
+#centro{
+    border: 2px white solid;
+    border-radius: 10px; 
+    width: 300px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    margin-top: -250px;
+    margin-left:-150px;
+}
+
+#centro2{
+    width: 250px;
+    height: 450px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    margin-top: -225px;
+    margin-left:-125px;
+    border-radius: 40px;
+    background-color: rgba(255, 255, 255, 0.5); 
+}
+
+/* Mensagem de usuário ou senha invalido */
+#msgvalida{
+    font-family: cursive;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -95px;
+    margin-top: 70px;
+    color: red;
+}
+
+/* Posição imagem de usuário */
+#imguser{
+    height: 120px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -60px;
+    margin-top: -180px;
+}
+
+/* Botão de Login */
+.btnLogin{
+  font-family: cursive;
+  border: none;
+  border-radius: 15px;
+  color: #ffffff;
+  padding-bottom:3px;
+  padding-top:3px;
+  padding-left:75px;
+  padding-right: 75px;
+  margin-top: 35px;
+  margin-left: 34px;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: relative;
+  transition: all 500ms ease;
+  font-size: 15px;
+  line-height: 30px;
+}
+
+.btnLogin1{
+    background-color: #6959CD;
+}
+
+.btnLogin1:hover {
+    
+    background: rgba(0,0,0,0);
+    border-color: black;
+    box-shadow:  inset 0 0 0 2px white;
+}
+
+/* Input Login e Senha*/
+.txtBoxPos{
+    height: 25px;
+    width: 235px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    margin-left: -120px;
+    text-align: left;
+    background-color: rgba(255,255,255,0);
+    border-color: rgba(255,255,255,0);
+    border-top: none;
+    border-left: none;
+    border-right: none;    
+    transition: all 700ms ease;
+    outline: none;
+    box-shadow: none;
+    
+}
+
+.txtBoxPos1{
+    border-bottom-color:white ;
+}
+.txtBoxPos1:hover{
+    border-bottom-color:#6959CD ; 
+    
+}
+.txtBoxPos1:focus{
+    border-bottom-color:#6959CD ; 
+    box-shadow: none;
+}
+.txtBoxPos1:before{
+    border-bottom-color:#6959CD ; 
+    
+}
+
+
+
+
+
