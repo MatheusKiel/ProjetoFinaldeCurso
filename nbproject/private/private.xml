@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Netbeas%20Project/Udemy/UmcInsight/web/index.jsp</file>
+            <file>file:/D:/UMC/TCC/UmcInsight/web/WEB-INF/web.xml</file>
+            <file>file:/D:/UMC/TCC/UmcInsight/src/java/Modelo/Usuario.java</file>
+            <file>file:/D:/UMC/TCC/UmcInsight/src/java/Controle/ServletGestaoDeAcesso.java</file>
+            <file>file:/D:/UMC/TCC/UmcInsight/src/java/Dao/UsuarioDAO.java</file>
+            <file>file:/D:/UMC/TCC/UmcInsight/web/index.jsp</file>
+            <file>file:/D:/UMC/TCC/UmcInsight/web/sys_admin/ger_usuario.jsp</file>
+            <file>file:/D:/UMC/TCC/UmcInsight/src/java/Controle/ServletUsuario.java</file>
         </group>
     </open-files>
 </project-private>

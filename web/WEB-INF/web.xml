@@ -12,27 +12,26 @@
         <filter-name>AcessoLogado</filter-name>
         <url-pattern>/index.jsp</url-pattern>
         <url-pattern>/sys_admin/*</url-pattern>
-        
     </filter-mapping>
     <filter-mapping>
         <filter-name>AcessoAdministrativo</filter-name>
         <url-pattern>/sys_admin/*</url-pattern>
     </filter-mapping>
     <servlet>
-        <servlet-name>ServletUsuario</servlet-name>
-        <servlet-class>Controle.ServletUsuario</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>ServletGestaoDeAcesso</servlet-name>
         <servlet-class>Controle.ServletGestaoDeAcesso</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>ServletUsuario</servlet-name>
-        <url-pattern>/ServletUsuario</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>ServletGestaoDeAcesso</servlet-name>
         <url-pattern>/ServletGestaoDeAcesso</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletUsuario</servlet-name>
+        <servlet-class>Controle.ServletUsuario</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletUsuario</servlet-name>
+        <url-pattern>/ServletUsuario</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

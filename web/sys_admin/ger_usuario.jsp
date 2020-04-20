@@ -12,7 +12,14 @@
         <title>PFC - Umc Insight</title>
     </head>
     <body>
-        <form action="/ServletUsuario" method="POST">
+        <%
+            String msg = (String) request.getAttribute("msg");
+            if (msg != null){
+        %>
+        <font color="blue" style="float: right"> <%=msg %> </font>
+        <%}%>
+        <br>
+        <form action="../ServletUsuario" method="POST">
             <table>
                 <tr>
                     <td>Matricula:</td>
@@ -21,6 +28,10 @@
                 <tr>
                     <td>Nome Completo:</td>
                     <td><input name="nome" type="text" /></td>
+                </tr>
+                <tr>
+                    <td>Login:</td>
+                    <td><input name="login" type="text" /></td>
                 </tr>
                 <tr>
                     <td>CPF:</td>
@@ -44,18 +55,14 @@
                     <td><input name="telefone" type="text" /></td>
                 </tr>
                 <tr>
-                    <td>Login:</td>
-                    <td><input name="login" type="text" /></td>
+                    <td>Senha:</td>
+                    <td><input name="senha1" type="password" /></td>
                 </tr>
                 <tr>
-                    <td>Senha:</td>
-                    <td><input name="senha" type="password" /></td>
-                </tr>
-<%--               <tr>
                     <td>Confirmar Senha:</td>
-                    <td><input name="" type="password" /></td>
+                    <td><input name="senha2" type="password" /></td>
                 </tr>
-                <tr>    --%>
+                <tr>  
                     <td>Perfil de Acesso:</td>
                     <td><select name="opPerfil">
                             <option>PADRAO</option>
@@ -66,7 +73,7 @@
                 </tr>          
                 <tr>
                     <td>
-                    <td><input type="submit" name="acao" value="Cadastrar"/></td>
+                    <td><input type="submit" value="Cadastrar" name="acao" /></td>
                 </tr>
             </table>
         </form>        
